@@ -14,7 +14,7 @@ public class UserBuilderPattern {
 	public UserBuilderPattern(Builder builder){
 		this.firstName = builder.firstName;
 		this.secondName = builder.secondName;
-		this.age = builder.age; 
+		this.age = builder.age;
 		this.address = builder.address;
 		this.phone = builder.phone;
 	}
