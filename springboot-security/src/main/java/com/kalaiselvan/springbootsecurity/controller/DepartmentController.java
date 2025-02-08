@@ -1,0 +1,63 @@
+package com.kalaiselvan.springbootsecurity.controller;
+
+import static com.kalaiselvan.springbootsecurity.constants.ComConstants.SUCCESS;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kalaiselvan.springbootsecurity.dto.DepartmentDto;
+import com.kalaiselvan.springbootsecurity.dto.ResponseDto;
+import com.kalaiselvan.springbootsecurity.service.DepartmentService;
+
+@RestController
+@RequestMapping("api/v1/dept")
+public class DepartmentController {
+
+  private final DepartmentService deptService;
+
+  public DepartmentController(DepartmentService deptService) {
+
+    this.deptService = deptService;
+
+  }
+
+  @PostMapping("/add")
+  public ResponseEntity<ResponseDto<String>> createDepartment(@RequestBody DepartmentDto deptDto) {
+//		ResponseDto<String> responseDto = new ResponseDto<>();
+//		try {
+    String responseStr = deptService.saveDepartment(deptDto);
+    var response = new ResponseDto<String>(HttpStatus.CREATED.value(), responseStr, true, SUCCESS);
+//			responseDto.setMessage(response);
+//			responseDto.setStatus(HttpStatus.CREATED.value());
+    return new ResponseEntity<>(response, HttpStatus.CREATED);
+//		} catch (Exception e) {
+//			return GenericExceptionHandling.handleException(e);
+//		}
+  }
+
+  @GetMapping("/getAll")
+  public ResponseEntity<ResponseDto<List<DepartmentDto>>> getDepartment() {
+//		ResponseDto<List<DepartmentDto>> response = new ResponseDto<>();
+//		try {
+    var response = deptService.getDeptDetails();
+    return new ResponseEntity<>(response, HttpStatus.OK);
+//		}catch (Exception e) {
+//			return GenericExceptionHandling.handleException(e);
+//		}
+  }
+
+  @PostMapping("/update")
+  public ResponseEntity<ResponseDto<String>> updateDeparment(
+      @RequestBody List<DepartmentDto> deptDto) {
+    return deptService.editDepartment(deptDto);
+  }
+
+
+}

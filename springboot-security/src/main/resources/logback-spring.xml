@@ -1,0 +1,28 @@
+<configuration>
+
+    <property name="ANSI_RED" value="\u001B[31m"/>
+    <property name="ANSI_GREEN" value="\u001B[32m"/>
+    <property name="ANSI_YELLOW" value="\u001B[33m"/>
+    <property name="ANSI_BLUE" value="\u001B[34m"/>
+    <property name="ANSI_RESET" value="\u001B[0m"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %highlight(%level) - %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>app.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %level - %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+
+</configuration>
