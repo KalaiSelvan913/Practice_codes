@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="CustomerBean" class="ExpressionLanguage.Customer">
+		<property name="lists">
+		<list>
+		<value>1</value>
+		<ref bean="PersonBean"/>
+		<bean class="ExpressionLanguage.Person">
+			<property name="name" value="MyList"/>
+			<proepry name="address" value="address1"/>
+			<property name="age" value="23"/>
+		</bean>
+		</list>
+		</property>
+		
+		<property name="sets">
+		<set>
+		<value>2</value>
+		<ref bean="PersonBean"/>
+		<bean class="ExpressionLanguage.Person">
+			<property name="name" value="MySet"/>
+			<property name="address" value="address2"/>
+			<property name="age" value="25"/>
+		</bean>
+		</set>
+		</property>
+		
+		<propety name="maps">
+		<map>
+			<entry key="Key1" value="1"/>
+			<entry key="Key2" value-ref="PersonBean"/>
+			<entry key="Key3">
+				<bean class="ExpressionLanguage.Person">
+					<propety name="name" value="MyMap"/>
+					<propety name="address" value="address1"/>
+					<property name="age value="34"/>
+				</bean>
+			</entry>
+		</map>
+		</propety>
+		
+	
+		<property name="props">
+		<props>
+			<prop key="admin">admin@maasmind.com</prop>
+			<prop key="support">support@maasmind.com</prop>
+		</props>
+		</property>
+		</bean>
+		
+		
+		
+		<!-- Person class  -->
+		
+		<bean id="PersonBean" class="ExpressionLanguage.Person">
+		<property name="name" value="Myname"/>
+		<property name="address" value="address3"/>
+		<property name="age" value="31"/>
+		</bean>
+		
+</beans>		
