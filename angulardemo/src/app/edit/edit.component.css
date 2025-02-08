@@ -1,0 +1,126 @@
+.form {
+    margin-top: 10px;
+    /* background: rgba(226, 216, 216, 0.5); */
+    background-image: none;
+    height: 50vh;
+
+
+}
+
+.icon-position {
+    position: relative;
+    right: 35px;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(29, 102, 238);
+    text-shadow: 2px 2px 8px #f1e9e9;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.inputWithIcon {
+    position: relative;
+}
+
+.inputWithIcon i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.inputWithIcon input[type="text"]:focus+i {
+    color: dodgerBlue;
+}
+
+.inputWithIcon.inputIconBg i {
+    background-color: #aaa;
+    color: #fff;
+    padding: 9px 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.inputWithIcon.inputIconBg input[type="text"]:focus+i {
+    color: #fff;
+    background-color: dodgerBlue;
+}
+
+input[type="text"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon input[type="text"] {
+    padding-left: 40px;
+}
+
+.inputWithIcon input[type="date"] {
+    padding-left: 40px;
+}
+
+input[type="date"] {
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input[type="date"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon.inputIconBg input[type="date"]:focus+i {
+    color: #fff;
+    background-color: dodgerBlue;
+}
+
+.inputWithIcon input[type="date"]:focus+i {
+    color: dodgerBlue;
+}
+
+#team {
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+#team:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon #team {
+    padding-left: 40px;
+}
+
+.inputWithIcon.inputIconBg #team:focus+i {
+    color: #fff;
+    background-color: dodgerBlue;
+}
+
+.inputWithIcon #team:focus+i {
+    color: dodgerBlue;
+}

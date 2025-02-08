@@ -1,0 +1,8 @@
+com/fa/dto/ng/CrudNgDto.class
+com/fa/dto/ng/CommonDto.class
+com/fa/serviceimpl/ng/CrudNgServiceImpl.class
+com/fa/service/ng/CrudNgService.class
+com/fa/CrudNgApplication.class
+com/fa/repository/ng/CrudNgRepository.class
+com/fa/controller/ng/CrudNgController.class
+com/fa/entity/ng/CrudNgEntity.class

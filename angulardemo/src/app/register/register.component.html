@@ -1,0 +1,202 @@
+<div class="register">
+  <div class="container-fluid">
+    <h1 class="fw-bold">Creation Form</h1>
+  </div>
+
+  <!-- <div class="container mt-5">
+    <div class="row justify-content-center "> -->
+  <div class="col-lg">
+    <form [formGroup]="profileForm" class="row gx-3 p-5 m-4 align-items-center shadow rounded bg-gradient text-dark">
+      <div class="col-md-3">
+        <!--       Name Field          -->
+        <div class="form-group mt-3 ">
+          <label for="ForName" class="fw-bold"> Name :</label>
+          <div class="inputWithIcon">
+            <input type="text" class="form-control shadow bg-body rounded" id="name" name="name" formControlName="name"
+              [ngClass]="{'is-invalid' : submitted && f['name'].errors}" placeholder="Enter Name" />
+            <i class="fa fa-user fa-lg fa-fw"></i>
+            <!-- Validation  For  Name-->
+            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+              <div *ngIf="f['name'].errors['required']">
+                Name is Required !!!!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <!-- Email Field -->
+        <div class="form-group mt-3 ">
+          <label for="ForEmail" class="fw-bold"> Email :</label>
+          <div class="inputWithIcon">
+            <input type="text" class="form-control shadow bg-body rounded" id="email" name="email"
+              formControlName="email" [ngClass]="{'is-invalid' : submitted && f['email'].errors}"
+              placeholder="Enter Email" />
+            <i class="fa fa-envelope fa-lg fa-fw"></i>
+            <!-- Validation  For  Email-->
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">
+                Email is Required !!!!!
+              </div>
+              <div *ngIf="f['email'].errors['pattern']">Email must be a valid email address</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <!-- PhoneNumber Field -->
+        <div class="form-group mt-3 ">
+          <label for="ForEmail" class="fw-bold"> PhoneNumber :</label>
+          <div class="inputWithIcon">
+            <input type="text" class="form-control shadow bg-body rounded" id="phone" name="phone"
+              formControlName="phone" [ngClass]="{'is-invalid' : submitted && f['phone'].errors}"
+              placeholder="Enter PhoneNumber" maxlength="10" />
+            <i class="fa fa-phone fa-lg fa-fw"></i>
+            <!-- Validation  For  phoneNumber-->
+            <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+              <div *ngIf="f['phone'].errors['required']">
+                PhoneNumber is Required !!!!!
+              </div>
+              <div *ngIf="f['phone'].errors['pattern']">Please, Enter 10 digit Mobile Number.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <!-- DateOfBirth Field -->
+        <div class="form-group mt-3 ">
+          <label for="ForEmail" class="fw-bold"> DateOfBith :</label>
+          <div class="inputWithIcon">
+            <input type="date" class="form-control shadow bg-body rounded" id="dob" name="dob" formControlName="dob"
+              [ngClass]="{'is-invalid' : submitted && f['dob'].errors}" placeholder="Enter DateofBirth" />
+            <i class="fa fa-calendar-plus-o fa-lg fa-fw" aria-hidden="true"></i>
+            <!-- Validation  For  DateOfBirth-->
+            <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+              <div *ngIf="f['dob'].errors['required']">
+                DOB is Required !!!!!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <!-- Team Field -->
+        <div class="form-group mt-4">
+          <label class="control-label col-sm-5 fw-bold" for="team">Team:</label>
+          <div class="col-lg-10 col-md-10 col-10 shadow bg-body rounded inputWithIcon" id="select">
+            <select class="form-select" name="team" id="team" formControlName="team" required>
+              <option selected disabled value="">Select...</option>
+              <option value="LIC">LIC</option>
+              <option value="RS">RS</option>
+              <option value="GoPolicy">GoPolicy</option>
+            </select>
+            <i class="fa fa-users fa-lg fa-fw" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-8">
+        <!-- Gender Field -->
+        <div class="form-group mt-5">
+          <label class="control-label col-sm-5 fw-bold" for="gender">SelectGender :</label>
+          <div class="form-check form-check-inline ">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="Male" value="Male">
+            <label class="form-check-label fw-normal" for="inlineRadio2">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="Female"
+              value="Female">
+            <label class="form-check-label fw-normal" for="inlineRadio2">Female</label>
+          </div>
+          <!-- Validation  For  Gender -->
+          <div *ngIf="submitted && f['gender'].errors" class="text-danger">
+            <div *ngIf="f['gender'].errors['required']">
+              Gender is Required !!!!!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="form-group mt-4">
+          <div class="text-center">
+            <button type="button" (click)="submit()" class="btn btn-primary btn-lg text-center">Submit</button>&nbsp;
+          </div>
+          <!-- <button class=" btn btn-success " (click)="update();">Update</button>&nbsp;
+              <button (click)="getAllData()" class="btn btn-warning">GetData</button> -->
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+    <!-- <div class="form-group mt-3">
+        <label class="control-label col-sm-5" for="ForSkill">Skills :</label>
+		
+        
+        <div class="form-check ms-5">
+            <input class="form-check-input" type="checkbox" [formControl]="remember" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              HTML 5
+            </label>
+          </div>
+
+          <div class="form-check ms-5">
+            <input class="form-check-input" type="checkbox" [formControl]="remember" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              CSS 3
+            </label>
+          </div>
+
+          <div class="form-check ms-5">
+            <input class="form-check-input" type="checkbox" [formControl]="remember" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              BOOTSTRAP 5
+            </label>
+          </div>
+
+          <div class="form-check ms-5">
+            <input class="form-check-input" type="checkbox" [formControl]="remember" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              ANGULAR
+            </label>
+          </div>
+
+          <div class="form-check ms-5">
+            <input class="form-check-input" type="checkbox" [formControl]="remember" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              SPRING BOOT
+            </label>
+          </div>
+				
+    </div> -->
+
+
+
+    <!-- </div> -->
+    <!-- <p>Skill : {{ remember.value }}</p> -->
+
+
+    <!-- Print Form values -->
+    <!-- <div class="container mt-5 ">
+    <p><b>Form value: </b><mark>{{ profileForm.value | json }}</mark></p>
+  </div> -->
+
+    <!-- <-- Print Status for Validation -->
+    <!-- <div class="container mt-5">
+    <p><b>Form Status: </b><mark>{{ profileForm.status }}</mark></p>
+  </div>-->
+    <!-- </div> -->
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>

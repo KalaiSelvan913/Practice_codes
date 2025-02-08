@@ -1,0 +1,27 @@
+
+<!-- <label for="">Name: </label><br>
+<input type="text" name="name" id="name" [(ngModel)]="name"/> <br>
+<button class="btn btn-success mt-3" (click)="click(name)">click</button> -->
+<form #myForm="ngForm">
+<div class="form-group">
+    <label class="form-label" for="name">name: </label><br>
+    <input type="text" name="name" id="name" class="form-control mt-3" ngModel #name="ngModel" required>
+    <div class="text-danger" *ngIf=" Submitted && name.errors && name.errors['required']" >Name is required</div><br>
+
+    
+</div>
+<div class="form-group">
+    <label for="email" class="form-label mt-3">Email: </label><br>
+    <input type="text" name="email" id="email" class="form-control mt-3" ngModel #email="ngModel" required/>
+    <div class="text-danger" *ngIf="Submitted && email.errors && email.errors['required']" >Email is Required</div><br>
+</div>
+<div class="form-group">
+    <label for="phone" class="form-label mt-3 ">Phone: </label><br>
+    <input type="text" name="phone" id="phone" class="form-control mt-3" ngModel #phone="ngModel" required/>
+    <div class="text-danger" *ngIf=" Submitted && phone.errors && phone.errors['required']" >PhoneNumber is Required</div><br>
+</div>
+<div class="from-group">
+    <button class="btn btn-success mt-3" (click)="click(myForm)">Submit</button>   
+</div>
+</form>
+

@@ -1,0 +1,90 @@
+<div class="form">
+    <div class="container-fluid">
+        <div class="text-center">
+        <h1 class="fw-bold fs-3">Edit Form</h1>
+    </div>
+    </div>
+<form [formGroup]="editForm" class="row gx-3 gy-2 p-3 m-5 align-items-center shadow rounded bg-warning text-dark">
+    <div class="col-md-3">
+        <!-- Name Input Field -->
+        <div class="form-group mt-3">
+            <label for="ForName" class="fw-bold"> Name :</label>
+            <div class="inputWithIcon">
+                <input type="text" class="form-control shadow bg-body rounded" formControlName="name" readonly>
+                        <i class="fa fa-user-circle-o fa-lg fa-fw"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <!-- Email Input Field -->
+        <div class="form-group mt-3">
+            <label for="ForEmail" class="fw-bold"> Email :</label>
+            <div class="inputWithIcon">
+                <input type="text" class="form-control shadow bg-body rounded" formControlName="email">
+                        <i class="fa fa-envelope fa-lg fa-fw"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <!-- PhoneNumber Input Field -->
+        <div class="form-group mt-3">
+            <label for="ForPhoneNumber" class="fw-bold"> PhoneNumber :</label>
+            <div class="inputWithIcon">
+                <input type="text" class="form-control shadow bg-body rounded" formControlName="phone" maxlength="10">
+                        <i class="fa fa-phone fa-lg fa-fw"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <!-- DateOfBirth Input Field -->
+        <div class="form-group mt-3">
+            <label class="control-label col-sm-5 fw-bold" for="ForDob">Date Of Birth :</label>
+            <div class="inputWithIcon">
+                <input type="date" class="form-control shadow bg-body rounded" id="dob" name="dob"
+                    formControlName="dob" />
+                    <i class="fa fa-calendar-plus-o fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group mt-3">
+            <label class="control-label col-sm-5 fw-bold" for="ForTeam">Team :</label>
+            <div class="col-lg-10 col-md-10 col-10 shadow bg-body rounded inputWithIcon" id="select">
+            <select class="form-select shadow bg-body rounded" id="team" formControlName="team"
+                aria-label="Default select example">
+                <option selected disabled value="">Select Team</option>
+                <option value="LIC">LIC</option>
+                <option value="RS">RS</option>
+                <option value="GoPolicy">GoPolicy</option>
+            </select>
+            <i class="fa fa-users fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group mt-4">
+            <label class="control-label col-sm-5 fw-bold" for="ForGender">Gender :</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="Male"
+                    value="Male">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="Female"
+                    value="Female">
+                <label class="form-check-label" for="inlineRadio1">Female</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center mt-5">
+        <button class="btn btn-primary" (click)="saveEdit()">Save Edit</button>
+    </div>
+</form>
+
+</div>

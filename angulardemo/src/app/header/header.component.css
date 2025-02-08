@@ -1,0 +1,64 @@
+h1{
+
+    text-align: center;
+    font-family: 'Merriweather', serif;
+	color: white;
+	text-shadow: 1px 1px 2px black, 0 0 7px blue, 0 0 2px darkblue
+
+}
+
+
+
+.header {
+	background-image: url("../../assets/img/header.webp");
+	background-color: #f1f1f1;
+	padding: 20px;
+	text-align: center;
+	background-position: center;
+	background-size: cover;
+}
+
+.nav-link:hover, .nav-link:active{
+	background-color: lightblue;
+	font-size:larger;
+}
+
+img{
+    width:40px;
+}
+
+.nav{
+	display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.head{
+	color:white; font-family: 'Merriweather', serif;
+	width: 25px;
+	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.nav-link{
+	
+	font-family: 'Merriweather', serif;
+	
+	
+}
+
+h6{
+	color: whitesmoke;
+}
+
+
+
+.navbar-brand{
+	font-family: 'Merriweather', serif;
+
+}
+
+
+
+
