@@ -1,0 +1,34 @@
+
+FOR CREATING NEW USER
+---------------------
+POST
+API : http://localhost:8080/products/new
+
+Request :
+
+	{
+    "name":"kalai",
+    "email":"kalai2@gmail.com",
+    "password":"K@lai@123",
+    "roles":"ROLE_ADMIN"
+    }
+
+FOR AUTHENTICATION 
+-------------------
+POST
+API : http://localhost:8080/products/authenticate
+
+Request: 
+
+	{
+    "username":"kalai",
+    "password":"K@lai@123"
+    }
+	
+Response :
+	{
+    "userName": "kalai",
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYWxhaSIsImlhdCI6MTc0ODA5NzY1NiwiZXhwIjoxNzQ4MDk5NDU2fQ.B6qPfUdkhJjQV1I4kwfUDkhGBicYomzKkfgTP72BKwI",
+    "result": true
+    }
+	
