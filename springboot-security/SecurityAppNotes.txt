@@ -32,3 +32,32 @@ Response :
     "result": true
     }
 	
+	
+CREATE NEW EMP DETAILS
+----------------------
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "dateOfBirth": "1990-05-15",
+  "gender": "MALE",
+  "empCode": "EMP003",
+  "email": "john.doe@example.com",
+  "phoneNumber": "1234567890",
+  "hireDate": "2022-01-01",
+  "departmentId": 1,
+  "salary": 55000.75,
+  "managerId": null,
+  "address": {
+    "street": "123 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "country": "USA"
+  },
+  "status": "ACTIVE",
+  "roles": [
+    "ROLE002"
+  ]
+}
+
